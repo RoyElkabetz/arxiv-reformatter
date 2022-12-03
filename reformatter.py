@@ -99,8 +99,16 @@ def reformat_email(msg: str, ttl: str, mark_authors=None, mark_titles=None, skip
                 emph_idx0 = cur_title.lower().find(mark_titles[i].lower())
                 emph_idx1 = emph_idx0 + len(mark_titles[i])
 
-                cur_title = '{0}<b>{1}</b>{2}'.format(cur_title[:emph_idx0], cur_title[emph_idx0:emph_idx1],
-                                                      cur_title[emph_idx1:])
+                if send_marked_only:
+                    # if send marked only, leave bold titles
+                    cur_title = '{0}<b>{1}</b>{2}'.format(cur_title[:emph_idx0],
+                                                          cur_title[emph_idx0:emph_idx1],
+                                                          cur_title[emph_idx1:])
+                else:
+                    # if send all content, color with pink background the marked titles
+                    cur_title = '{0}<hr color="pink">{1}</hr>{2}'.format(cur_title[:emph_idx0],
+                                                                         cur_title[emph_idx0:emph_idx1],
+                                                                         cur_title[emph_idx1:])
 
         # check if we should skip this listing:
         skipped.append(False)

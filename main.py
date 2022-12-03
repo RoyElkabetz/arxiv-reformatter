@@ -2,6 +2,8 @@ from reformatter import *
 import logging
 import logging.handlers
 
+KEYWORDS = ["Reinforcement Learning", "RL", "Multi Agent", "Multi-Agent", "MARL", "Actor Critic", "Actor-Critic",
+            "Tree-Search", "Tree Search", "Free-Energy", "Free Energy"]
 
 # load parameters from environment secrets
 email_username = set_from_env('EMAIL_USERNAME', 'vital')
@@ -26,7 +28,7 @@ trash_fetched = set_from_env('TRASH_FETCHED', False)
 mark_cs = set_from_env('MARK_CS', None)
 mark_physics = set_from_env('MARK_PHYSICS', mark_cs)
 # emph_cs = set_from_env('EMPH_CS', None)
-emph_cs = ["Reinforcement Learning", "RL", "Multi Agent", "Multi-Agent", "MARL"]
+emph_cs = KEYWORDS
 emph_physics = set_from_env('EMPH_PHYSICS', emph_cs)
 advertise_marked = set_from_env('ADVERTISE_MARKED', True)
 send_marked_only = set_from_env('SEND_MARKED_ONLY', False)

@@ -31,8 +31,8 @@ mark_physics = set_from_env('MARK_PHYSICS', mark_cs)
 emph_cs = KEYWORDS
 emph_physics = set_from_env('EMPH_PHYSICS', emph_cs)
 advertise_marked = set_from_env('ADVERTISE_MARKED', True)
-send_marked_only = set_from_env('SEND_MARKED_ONLY', False)
-# send_marked_only = True
+# send_marked_only = set_from_env('SEND_MARKED_ONLY', False)
+send_marked_only = True
 skip_cs = set_from_env('SKIP_CS', None)
 skip_physics = set_from_env('SKIP_PHYSICS', skip_cs)
 
